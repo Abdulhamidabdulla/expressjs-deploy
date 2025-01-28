@@ -2,7 +2,6 @@ import express from "express";
 import serverless from "serverless-http";
 
 const app = express();
-const port = 8000
 
 app.get("/", (req, res) => {
   res.send("Server sizni tinglamoqda...");
@@ -16,6 +15,4 @@ app.get("/about", (req, res) => {
   });
 });
 
-app.listen(port, ()=>{
-  console.log(`http://localhost:${port}`);
-})
+export const handler = serverless(app);
